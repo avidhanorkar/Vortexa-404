@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const passportLocalMongoose = require("passport-local-mongoose");
 
 const userSchema = new mongoose.Schema({
     username: { type: String, required: true, unique: true },
@@ -24,6 +25,17 @@ const userSchema = new mongoose.Schema({
             completed_at: { type: Date, default: Date.now },
         },
     ],
+});
+
+// Add passport-local-mongoose plugin to the user schema
+userSchema.plugin(passportLocalMongoose, {
+    usernameField: 'username', // Field used as username
+    errorMessages: {
+        MissingUsernameError: 'Please enter a username.',
+        MissingPasswordError: 'Please enter a password.',
+        IncorrectPasswordError: 'Incorrect password.',
+        IncorrectUsernameError: 'Incorrect username.',
+    },
 });
 
 module.exports = mongoose.model("User", userSchema);
