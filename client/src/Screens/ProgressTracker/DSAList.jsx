@@ -34,7 +34,7 @@ export default function DSAList() {
     return (
         <div className="flex flex-col gap-10 w-[60%] mb-40 relative">
             {overallProgress === 100 && (
-                <h1 className="text-center text-4xl text-emerald-500">
+                <h1 className="text-center text-4xl ">
                     Successfully Completed! Hurray.
                 </h1>
             )}
