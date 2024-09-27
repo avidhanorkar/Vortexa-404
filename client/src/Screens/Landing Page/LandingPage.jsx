@@ -4,11 +4,14 @@ import AdminLogin from './adminLogin.jsx';
 import Features from './Features.jsx';
 import Testimonials from './Testimonials.jsx'
 import Footer from '../Footer/footer.jsx';
+import Navbar from '../nav.jsx';
 
 const Landing = () => {
   return (
     <>
+    <Navbar />
       <div className='flex flex-row w-[100vw] h-[100vh] bg-[#000] justify-center'>
+        
         <div className='w-1/2 h-[100vh] p-[100px] flex flex-col'>
             <p className='text-8xl'>Achieve<span className='text-9xl text-[#ECDBB5]'>X</span></p>
             <p className='text-3xl '>Unleash your true potential</p>
