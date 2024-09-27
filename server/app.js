@@ -1,18 +1,21 @@
-<<<<<<< HEAD
 const express = require('express');
 const mongoose = require('mongoose');
 const passport = require('passport');
-const LocalStrategy = require('passport-local');
+const LocalStrategy = require('passport-local').Strategy; // Ensure you're importing Strategy
 const session = require('express-session');
-const User = require('./models/user');
-const authRoutes = require('./routes/auth'); // Import auth routes
+const User = require('./models/userModel.js'); // Ensure this model is set up correctly
+const authRoutes = require('./routes/index.js'); // Import auth routes
 const app = express();
 
 // Database connection
-mongoose.connect('mongodb://localhost:27017/team404')
+mongoose.connect('mongodb://localhost:27017/team404', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+})
 .then(() => {
     console.log('Connected to MongoDB');
-}).catch(err => {
+})
+.catch(err => {
     console.log('Error connecting to MongoDB:', err);
 });
 
@@ -27,12 +30,12 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Passport.js Local Strategy
-passport.use(new LocalStrategy(User.authenticate()));
+passport.use(new LocalStrategy(User.authenticate())); // Make sure User has the authenticate method
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 // Mount the auth routes
-app.use('/auth', authRoutes); // All auth routes will start with /auth
+app.use('/api', authRoutes);
 
 // Example of a protected route
 app.get('/dashboard', (req, res) => {
@@ -50,6 +53,3 @@ app.listen(PORT, () => {
 });
 
 module.exports = app;
-=======
-//console
->>>>>>> 563bd4dcb50cbc7218c6adf1885f2476da99608b

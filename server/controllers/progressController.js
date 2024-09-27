@@ -1,4 +1,4 @@
-const Progress = require('../models/progress');
+const Progress = require('../models/progressModel');
 
 // Update user progress in course
 exports.updateProgress = async (req, res) => {

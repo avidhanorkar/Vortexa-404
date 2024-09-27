@@ -1,4 +1,4 @@
-const User = require('../models/user');
+const User = require('../models/userModel');
 
 // Create new user
 exports.createUser = async (req, res) => {
@@ -22,6 +22,30 @@ exports.createUser = async (req, res) => {
   }
 };
 
+// Login user
+exports.loginUser = (req, res, next) => {
+  passport.authenticate('local', (err, user, info) => {
+    if (err) return next(err);
+
+    if (!user) {
+      return res.status(400).json({ error: 'Invalid username or password' });
+    }
+
+    req.logIn(user, (err) => {
+      if (err) return next(err);
+      res.status(200).json({ message: 'Logged in successfully', user });
+    });
+  })(req, res, next);
+};
+
+// Logout user
+exports.logoutUser = (req, res) => {
+  req.logout((err) => {
+    if (err) return res.status(500).json({ error: 'Logout failed' });
+    res.status(200).json({ message: 'Logged out successfully' });
+  });
+};
+
 // Get user by ID
 exports.getUserById = async (req, res) => {
   try {
@@ -38,6 +62,20 @@ exports.updateUserProgress = async (req, res) => {
   try {
     const user = await User.findByIdAndUpdate(req.params.id, { progress }, { new: true });
     res.status(200).json(user);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+};
+
+
+// Ensure to add the deleteUser function
+exports.deleteUser = async (req, res) => {
+  try {
+    const user = await User.findByIdAndDelete(req.params.id);
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+    res.status(200).json({ message: 'User deleted successfully' });
   } catch (err) {
     res.status(400).json({ error: err.message });
   }
