@@ -12,7 +12,7 @@ Start Your Journey Today!
 Sign up now to explore, learn, and unlock exciting rewards along the way!</p>
                 </div>
                 <div className='h-[20%] flex justify-center align-center'>
-                    <Link to="/login" className="px-3 py-2 bg-[#ECDBB5] text-[#000] font-bold w-max h-max rounded-lg hover:bg-[#fff]">SignUp</Link>
+                    <Link to="/dashboard" className="px-3 py-2 bg-[#ECDBB5] text-[#000] font-bold w-max h-max rounded-lg hover:bg-[#fff]">SignUp</Link>
                 </div>
             </div>
         </>
