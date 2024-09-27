@@ -12,9 +12,7 @@ const Landing = () => {
             <p className='text-8xl'>Achieve<span className='text-9xl text-[#ECDBB5]'>X</span></p>
             <p className='text-3xl '>Unleash your true potential</p>
             <p className='text-2xl text-gray-500 pt-8'>Learning doesn’t have to be a chore. </p>
-            <p className='text-2xl text-gray-500 '>At <span className='text-[#fff]'>Achieve<span className='text-[#ECDBB5]'>X</span></span>, we make education exciting through gamification! 
-
-Ready to transform your learning experience? Join today and turn your journey into a fun, rewarding adventure</p>
+            <p className='text-2xl text-gray-500 '>At <span className='text-[#fff]'>Achieve<span className='text-[#ECDBB5]'>X</span></span>, we make education exciting through gamification! Ready to transform your learning experience? Join today and turn your journey into a fun, rewarding adventure</p>
             <p className='text-2xl text-gray-500 pt-[100px]'>Explore More...</p>
         </div>
         <div className='bulb w-1/2 h-[100vh] bg-[#000]'>

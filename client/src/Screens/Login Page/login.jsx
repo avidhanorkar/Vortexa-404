@@ -19,28 +19,36 @@ const Login = () => {
     };
 
     return (
-        <div>
-            <h2>Login</h2>
-            <form onSubmit={handleSubmit}>
-                <label>Username:</label>
-                <input
-                    type="text"
-                    value={username}
-                    onChange={(event) => setUsername(event.target.value)}
-                    placeholder="Enter username"
-                />
-                <br />
-                <label>Password:</label>
-                <input
-                    type="password"
-                    value={password}
-                    onChange={(event) => setPassword(event.target.value)}
-                    placeholder="Enter password"
-                />
-                <br />
-                {error && <div style={{ color: 'red' }}>{error}</div>}
-                <button type="submit">Login</button>
-            </form>
+        <div className='bg-[#000] rounded p-[20px]'>
+            <p className='text-3xl font-bold'>Login</p>
+            <div className='flex flex-col pt-[50px] gap-[25px] w-[35vw] justify-center align-center'>
+                <form onSubmit={handleSubmit}>
+                    <div>
+                        <label className='text-[20px]'>Enter YourUsername: <br /> </label>
+                        <input className='w-[300px] h-[40px] text-[20px] rounded'
+                            type="text"
+                            value={username}
+                            onChange={(event) => setUsername(event.target.value)}
+                            placeholder="Enter username"
+                        />
+                        <br />
+                    </div>
+                    <div>
+                        <label className='text-[20px]'>Enter the Password: <br /> </label>
+                        <input className='w-[300px] h-[40px] text-[20px] rounded'
+                            type="password"
+                            value={password}
+                            onChange={(event) => setPassword(event.target.value)}
+                            placeholder="Enter password"
+                        />
+                        <br />
+                    </div>
+                    {error && <div style={{ color: 'red' }}>{error}</div>}
+                    <div className='mt-[50px]'>
+                        <button type="submit">Login</button>
+                    </div>
+                </form>
+            </div>
         </div>
     );
 };
