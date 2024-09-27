@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from "axios"
 
 const Login = () => {
     const [username, setUsername] = useState("");
@@ -12,6 +13,7 @@ const Login = () => {
         } else {
             // Call API or perform login logic here
             console.log(`Logging in with username: ${username} and password: ${password}`);
+            axios.post('https://localhost:3000/api/users/login', {username, password})
             // Reset form fields
             setUsername("");
             setPassword("");
