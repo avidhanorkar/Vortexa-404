@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 const SignUp = () => {
   const [role, setRole] = useState('');
   const [username, setUsername] = useState('');
@@ -86,7 +86,7 @@ const SignUp = () => {
         </div>
         <br />
         {error && <div style={{ color: 'red' }}>{error}</div>}
-        <button className='text-[#fff]' type="submit">Sign Up</button>
+        <Link to='/dashboard'><button className='text-[#fff]' type="submit">Sign Up</button></Link>
       </form>
     </div>
   );

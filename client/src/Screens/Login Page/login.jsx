@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from "axios"
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     const [username, setUsername] = useState("");
@@ -47,7 +48,7 @@ const Login = () => {
                     </div>
                     {error && <div style={{ color: 'red' }}>{error}</div>}
                     <div className='mt-[50px]'>
-                        <button type="submit">Login</button>
+                        <Link to='/dashboard'><button type="submit">Login</button></Link>
                     </div>
                 </form>
             </div>
