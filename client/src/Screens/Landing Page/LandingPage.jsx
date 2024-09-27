@@ -1,6 +1,8 @@
 import Spline from '@splinetool/react-spline';
 import UserLogin from './userLogin.jsx';
 import AdminLogin from './adminLogin.jsx';
+import Features from './Features.jsx';
+import Testimonials from './Testimonials.jsx'
 
 const Landing = () => {
   return (
@@ -24,6 +26,10 @@ Ready to transform your learning experience? Join today and turn your journey in
       <div className="login h-[100vh] w-[100vw] bg-[#000] flex  flex-row justify-center items-center gap-10">
         <UserLogin />
         <AdminLogin />
+      </div>
+      <div className="login h-[100vh] w-[100vw] bg-[#000] flex  flex-row justify-center items-center gap-10">
+        <Features />
+        <Testimonials />
       </div>
     </>
   );
