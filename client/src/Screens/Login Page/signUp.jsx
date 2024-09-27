@@ -27,7 +27,7 @@ const SignUp = () => {
       <h2 className='text-3xl font-bold'>Sign Up</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>
+          <label className='text-[20px]'>
             Role: <br/>
             <select value={role} onChange={(event) => setRole(event.target.value)}>
               <option className='text-[#fff]' value="">Select a role</option>
@@ -38,7 +38,7 @@ const SignUp = () => {
         </div>
         <br />
         <div>
-          <label>
+          <label className='text-[20px]'>
             Username:<br/>
             <input className='bg-[#000] text-[#fff] w-[300px] h-[40px] text-[20px] rounded'
               type="text"
@@ -50,7 +50,7 @@ const SignUp = () => {
         </div>
         <br />
         <div>
-          <label>
+          <label className='text-[20px]'>
             Email:<br/>
             <input className='bg-[#000] text-[#fff] w-[300px] h-[40px] text-[20px] rounded'
               type="email"
@@ -62,7 +62,7 @@ const SignUp = () => {
         </div>
         <br />
         <div>
-          <label>
+          <label className='text-[20px]'>
             Password:<br/>
             <input className='bg-[#000] text-[#fff] w-[300px] h-[40px] text-[20px] rounded'
               type="password"
@@ -74,7 +74,7 @@ const SignUp = () => {
         </div>
         <br />
         <div>
-          <label>
+          <label className='text-[20px]'>
             Confirm Password:<br/>
             <input className='bg-[#000] text-[#fff] w-[300px] h-[40px] text-[20px] rounded'
               type="password"

@@ -42,7 +42,7 @@ body.dark {
 }
 
 body {
-	background: var(--grey);
+	background: #000;
 	overflow-x: hidden;
 }
 
@@ -55,14 +55,15 @@ body {
 	position: fixed;
 	top: 0;
 	left: 0;
-	width: 280px;
+	width: 20vw;
 	height: 100%;
-	background: var(--light);
+	background: #676363;
 	z-index: 2000;
 	font-family: var(--lato);
 	transition: .3s ease;
 	overflow-x: hidden;
 	scrollbar-width: none;
+    border-radius: 8px;
 }
 #sidebar::--webkit-scrollbar {
 	display: none;
@@ -76,11 +77,11 @@ body {
 	height: 56px;
 	display: flex;
 	align-items: center;
-	color: var(--blue);
+	color:#eee;
 	position: sticky;
 	top: 0;
 	left: 0;
-	background: var(--light);
+	background: #000;
 	z-index: 500;
 	padding-bottom: 20px;
 	box-sizing: content-box;
@@ -102,7 +103,7 @@ body {
 	padding: 4px;
 }
 #sidebar .side-menu li.active {
-	background: var(--grey);
+	background: #fff;
 	position: relative;
 }
 #sidebar .side-menu li.active::before {
@@ -113,7 +114,7 @@ body {
 	border-radius: 50%;
 	top: -40px;
 	right: 0;
-	box-shadow: 20px 20px 0 var(--grey);
+	box-shadow: 20px 20px 0 #fff;
 	z-index: -1;
 }
 #sidebar .side-menu li.active::after {
@@ -124,23 +125,23 @@ body {
 	border-radius: 50%;
 	bottom: -40px;
 	right: 0;
-	box-shadow: 20px -20px 0 var(--grey);
+	box-shadow: 20px -20px 0 #fff;
 	z-index: -1;
 }
 #sidebar .side-menu li a {
 	width: 100%;
 	height: 100%;
-	background: var(--light);
+	background: #000;
 	display: flex;
 	align-items: center;
 	border-radius: 48px;
 	font-size: 16px;
-	color: var(--dark);
+	color: #fff;
 	white-space: nowrap;
 	overflow-x: hidden;
 }
 #sidebar .side-menu.top li.active a {
-	color: var(--blue);
+	color:#eee;
 }
 #sidebar.hide .side-menu li a {
 	width: calc(48px - (4px * 2));
@@ -150,7 +151,7 @@ body {
 	color: var(--red);
 }
 #sidebar .side-menu.top li a:hover {
-	color: var(--blue);
+	color:#eee;
 }
 #sidebar .side-menu li a .bx {
 	min-width: calc(60px  - ((4px + 6px) * 2));
@@ -169,6 +170,7 @@ body {
 	width: calc(100% - 280px);
 	left: 280px;
 	transition: .3s ease;
+    height: 100vh;
 }
 #sidebar.hide ~ #content {
 	width: calc(100% - 60px);
@@ -181,7 +183,7 @@ body {
 /* NAVBAR */
 #content nav {
 	height: 56px;
-	background: var(--light);
+	background: #000;
 	padding: 0 24px;
 	display: flex;
 	align-items: center;
@@ -200,21 +202,21 @@ body {
 	bottom: -40px;
 	left: 0;
 	border-radius: 50%;
-	box-shadow: -20px -20px 0 var(--light);
+	box-shadow: -20px -20px 0 #000;
 }
 #content nav a {
-	color: var(--dark);
+	color: #fff;
 }
 #content nav .bx.bx-menu {
 	cursor: pointer;
-	color: var(--dark);
+	color: #fff;
 }
 #content nav .nav-link {
 	font-size: 16px;
 	transition: .3s ease;
 }
 #content nav .nav-link:hover {
-	color: var(--blue);
+	color:#eee;
 }
 #content nav form {
 	max-width: 400px;
@@ -231,11 +233,11 @@ body {
 	padding: 0 16px;
 	height: 100%;
 	border: none;
-	background: var(--grey);
+	background: #fff;
 	border-radius: 36px 0 0 36px;
 	outline: none;
 	width: 100%;
-	color: var(--dark);
+	color: #fff;
 }
 #content nav form .form-input button {
 	width: 36px;
@@ -243,8 +245,8 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: var(--blue);
-	color: var(--light);
+	background:#eee;
+	color: #000;
 	font-size: 18px;
 	border: none;
 	outline: none;
@@ -262,9 +264,9 @@ body {
 	width: 20px;
 	height: 20px;
 	border-radius: 50%;
-	border: 2px solid var(--light);
+	border: 2px solid #000;
 	background: var(--red);
-	color: var(--light);
+	color: #000;
 	font-weight: 700;
 	font-size: 12px;
 	display: flex;
@@ -282,7 +284,7 @@ body {
 	min-width: 50px;
 	height: 25px;
 	border-radius: 25px;
-	background: var(--grey);
+	background: #fff;
 	cursor: pointer;
 	position: relative;
 }
@@ -293,7 +295,7 @@ body {
 	left: 2px;
 	bottom: 2px;
 	width: calc(25px - 4px);
-	background: var(--blue);
+	background:#eee;
 	border-radius: 50%;
 	transition: all .3s ease;
 }
@@ -325,7 +327,8 @@ body {
 	font-size: 36px;
 	font-weight: 600;
 	margin-bottom: 10px;
-	color: var(--dark);
+	color: #fff;
+    text-align: center;
 }
 #content main .head-title .left .breadcrumb {
 	display: flex;
@@ -333,22 +336,22 @@ body {
 	grid-gap: 16px;
 }
 #content main .head-title .left .breadcrumb li {
-	color: var(--dark);
+	color: #fff;
 }
 #content main .head-title .left .breadcrumb li a {
 	color: var(--dark-grey);
 	pointer-events: none;
 }
 #content main .head-title .left .breadcrumb li a.active {
-	color: var(--blue);
+	color:#eee;
 	pointer-events: unset;
 }
 #content main .head-title .btn-download {
 	height: 36px;
 	padding: 0 16px;
 	border-radius: 36px;
-	background: var(--blue);
-	color: var(--light);
+	background:#eee;
+	color: #000;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -367,7 +370,7 @@ body {
 }
 #content main .box-info li {
 	padding: 24px;
-	background: var(--light);
+	background: #000;
 	border-radius: 20px;
 	display: flex;
 	align-items: center;
@@ -384,7 +387,7 @@ body {
 }
 #content main .box-info li:nth-child(1) .bx {
 	background: var(--light-blue);
-	color: var(--blue);
+	color:#eee;
 }
 #content main .box-info li:nth-child(2) .bx {
 	background-color: rgb(157, 246, 157);
@@ -397,10 +400,10 @@ body {
 #content main .box-info li .text h3 {
 	font-size: 24px;
 	font-weight: 600;
-	color: var(--dark);
+	color: #fff;
 }
 #content main .box-info li .text p {
-	color: var(--dark);	
+	color: #fff;	
 }
 
 
@@ -413,11 +416,11 @@ body {
 	grid-gap: 24px;
 	margin-top: 24px;
 	width: 100%;
-	color: var(--dark);
+	color: #fff;
 }
 #content main .table-data > div {
 	border-radius: 20px;
-	background: var(--light);
+	background: #000;
 	padding: 24px;
 	overflow-x: auto;
 }
@@ -448,7 +451,7 @@ body {
 	padding-bottom: 12px;
 	font-size: 13px;
 	text-align: left;
-	border-bottom: 1px solid var(--grey);
+	border-bottom: 1px solid #fff;
 }
 #content main .table-data .order table td {
 	padding: 16px 0;
@@ -466,12 +469,12 @@ body {
 	object-fit: cover;
 }
 #content main .table-data .order table tbody tr:hover {
-	background: var(--grey);
+	background: #fff;
 }
 #content main .table-data .order table tr td .status {
 	font-size: 10px;
 	padding: 6px 16px;
-	color: var(--light);
+	color: #000;
 	border-radius: 20px;
 	font-weight: 700;
 }
@@ -496,7 +499,7 @@ body {
 #content main .table-data .todo .todo-list li {
 	width: 100%;
 	margin-bottom: 16px;
-	background: var(--grey);
+	background: #fff;
 	border-radius: 10px;
 	padding: 14px 20px;
 	display: flex;
@@ -507,7 +510,7 @@ body {
 	cursor: pointer;
 }
 #content main .table-data .todo .todo-list li.completed {
-	border-left: 10px solid var(--blue);
+	border-left: 10px solid#eee;
 }
 #content main .table-data .todo .todo-list li.not-completed {
 	border-left: 10px solid var(--orange);
@@ -556,7 +559,7 @@ body {
 		height: auto;
 		background: transparent;
 		border-radius: none;
-		color: var(--dark);
+		color: #fff;
 	}
 
 	#content nav form.show .form-input input {
@@ -567,7 +570,7 @@ body {
 		width: 36px;
 		height: 100%;
 		border-radius: 0 36px 36px 0;
-		color: var(--light);
+		color: #000;
 		background: var(--red);
 	}
 

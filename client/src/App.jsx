@@ -1,3 +1,4 @@
+import ChatBot from './Screens/ChatBot/chatBot.jsx'
 import Dashboard from './Screens/DashBoard/dashboard.jsx'
 import Landing from './Screens/Landing Page/LandingPage'
 import LoginPage from './Screens/Login Page/LoginPage.jsx'
@@ -14,6 +15,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path='/dashboard' element={<Dashboard />} />
         <Route path='/progress' element={<ProgressTracker />} />
+        <Route path='/chatBot' element={<ChatBot />} />
       </Routes>
     </BrowserRouter>
   )

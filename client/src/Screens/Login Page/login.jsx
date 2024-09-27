@@ -22,7 +22,7 @@ const Login = () => {
     };
 
     return (
-        <div className='bg-[#000] rounded p-[20px]'>
+        <div className='bg-[#000] rounded-md p-[20px]'>
             <p className='text-3xl font-bold'>Login</p>
             <div className='flex flex-col pt-[50px] gap-[25px] w-[35vw] justify-center align-center'>
                 <form onSubmit={handleSubmit}>
