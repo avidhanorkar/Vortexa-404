@@ -8,10 +8,7 @@ const authRoutes = require('./routes/index.js'); // Import auth routes
 const app = express();
 
 // Database connection
-mongoose.connect('mongodb://localhost:27017/team404', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-})
+mongoose.connect('mongodb://localhost:27017/team404')
 .then(() => {
     console.log('Connected to MongoDB');
 })

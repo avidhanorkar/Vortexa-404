@@ -1,8 +1,9 @@
 const User = require('../models/userModel');
+const passport = require('passport');
 
 // Create new user
 exports.createUser = async (req, res) => {
-  const { username, email, role } = req.body;
+  const { username, email, role, password } = req.body;
   const userData = { username, email, role };
 
   if (role !== 'admin') {
@@ -14,13 +15,19 @@ exports.createUser = async (req, res) => {
   }
 
   try {
-    const user = new User(userData);
-    await user.save();
-    res.status(201).json(user);
+    // Create a new user instance without password
+    const newUser = new User(userData);
+
+    // Register the user with passport-local-mongoose, passing the password separately
+    await User.register(newUser, password);  // Second argument is the plain password
+
+    res.status(201).json(newUser);
   } catch (err) {
     res.status(400).json({ error: err.message });
   }
 };
+
+
 
 // Login user
 exports.loginUser = (req, res, next) => {
@@ -37,6 +44,7 @@ exports.loginUser = (req, res, next) => {
     });
   })(req, res, next);
 };
+
 
 // Logout user
 exports.logoutUser = (req, res) => {
