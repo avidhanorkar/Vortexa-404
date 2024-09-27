@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const express = require('express');
 const mongoose = require('mongoose');
 const passport = require('passport');
@@ -49,3 +50,6 @@ app.listen(PORT, () => {
 });
 
 module.exports = app;
+=======
+//console
+>>>>>>> 563bd4dcb50cbc7218c6adf1885f2476da99608b
